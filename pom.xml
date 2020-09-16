@@ -13,12 +13,26 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   
-<distributionManagement>
+<!-- To transfer artifacts to a dedicated folder on the box -->
+  <!--<distributionManagement>
  <repository>
    <id>internal.repo</id>
    <name>Internal Repo</name>
    <url>file:///var/lib/jenkins/myartifacts/</url>
   </repository>
+</distributionManagement> -->
+<!-- To transfer artifacts to nexus repo -->
+<distributionManagement>
+ <repository>
+    <id>releases</id>
+    <!-- CHANGE HERE by your team nexus server -->
+    <url>http://35.153.255.30:8081/repository/maven-releases/</url>
+  </repository>
+  <snapshotRepository>
+    <id>snapshots</id>
+    <!-- CHANGE HERE by your team nexus server -->
+    <url>http://35.153.255.30:8081/repository/maven-snapshots/</url>
+  </snapshotRepository>
 </distributionManagement>
 
   <dependencies>
